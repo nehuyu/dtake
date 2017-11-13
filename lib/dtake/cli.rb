@@ -9,7 +9,9 @@ module Dtake
 		def ls()
 			list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
 			doc = Nokogiri::HTML(open(list_url))
-			doc.inner_html.split("\n").each do |line|
+			doc.inner_text.split("\n").each do |line|
+				next if (line == "") #空行は無視
+				
 				puts line
 			end
 		end
