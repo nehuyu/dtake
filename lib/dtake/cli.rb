@@ -15,10 +15,10 @@ module Dtake
 				doc.inner_html.split("\n").each do |line|
 					puts line
 				end
-				exit
+			else
+				command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + argv
+				system(command)
 			end
-			command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + argv
-			system(command)
 		end
 	end
 end
