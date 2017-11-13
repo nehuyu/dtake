@@ -1,7 +1,5 @@
 #! /usr/bin/env ruby
 
-require 'test_gem'
-
 require 'nokogiri'
 require 'open-uri'
 
