@@ -5,7 +5,7 @@ require 'thor'
 
 module Dtake
   class CLI < Thor
-		desc "dtake ls", "show all files on list.html." # コマンドの使用例と、概要
+		desc "ls", "show all files on list.html." # コマンドの使用例と、概要
 		def ls()
 			list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
 			doc = Nokogiri::HTML(open(list_url))
@@ -16,13 +16,13 @@ module Dtake
 			end
 		end
 		
-		desc "dtake d filename", "download file on the server." # コマンドの使用例と、概要
+		desc "d filename", "download file on the server." # コマンドの使用例と、概要
 		def d(filename)
 			command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + filename
 			system(command)
 		end
 
-		desc "dtake find query", "search files by filename." # コマンドの使用例と、概要
+		desc "find query", "search files by filename." # コマンドの使用例と、概要
 		option :aliases => "f"
 		def find(q)
 			list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
