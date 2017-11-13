@@ -20,6 +20,21 @@ module Dtake
 			system(command)
 		end
 
+		desc "dtake f hoge", "search file on the server." # コマンドの使用例と、概要
+		def f(q)
+			list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
+			doc = Nokogiri::HTML(open(list_url))
+			doc.inner_text.split("\n").each do |line|
+				
+				next if (line == "") #空行は無視
+				
+				file_name = line.split(" ").last
+				if(file_name.match(q))
+					puts line
+				end
+			end
+		end
+
 	end
 end
 
