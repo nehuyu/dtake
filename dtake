@@ -1,0 +1,18 @@
+#! /usr/bin/env ruby
+require 'nokogiri'
+require 'open-uri'
+
+filename = ARGV[0]
+
+if filename == '-ls'
+	list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
+	doc = Nokogiri::HTML(open(list_url))
+	doc.inner_html.split("\n").each do |line|
+		puts line
+	end
+	
+	exit
+end
+
+command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + filename
+system(command)
