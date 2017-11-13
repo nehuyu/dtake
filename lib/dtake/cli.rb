@@ -17,7 +17,8 @@ module Dtake
 				end
 				exit
 			end
-			command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + filename
+			command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + argv
+			system(command)
 		end
 	end
 end
