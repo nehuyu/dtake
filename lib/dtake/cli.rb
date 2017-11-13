@@ -24,6 +24,8 @@ module Dtake
 
 		desc "dtake f hoge", "search file on the server." # コマンドの使用例と、概要
 		def f(q)
+		option :aliases => "f"
+		def find(q)
 			list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
 			doc = Nokogiri::HTML(open(list_url))
 			doc.inner_text.split("\n").each do |line|
