@@ -5,9 +5,7 @@ require 'thor'
 
 module Dtake
   class CLI < Thor
-    default_command :main
-		
-		desc "dtake some.rb", "download" # コマンドの使用例と、概要
+		desc "dtake ls", "display list on list.html." # コマンドの使用例と、概要
 		def ls()
 			list_url = "https://web.sfc.keio.ac.jp/~takefuji/list.html" 
 			doc = Nokogiri::HTML(open(list_url))
@@ -16,6 +14,7 @@ module Dtake
 			end
 		end
 		
+		desc "dtake d hoge.py", "download file on the server." # コマンドの使用例と、概要
 		def d(filename)
 			command = "wget https://web.sfc.keio.ac.jp/~takefuji/" + filename
 			system(command)
