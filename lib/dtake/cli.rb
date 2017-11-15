@@ -12,13 +12,13 @@ module Dtake
 			doc = Nokogiri::HTML(open(list_url))
 			doc.inner_text.split("\n").each do |line|
 				next if (line == "") #空行は無視
-        date = Date.strptime(line.split[4] + ' ' + line.split[5], '%b %d')
+				date = Date.strptime(line.split[4] + ' ' + line.split[5], '%b %d')
 				
-        if (Date.today - date).floor < 15
-				  puts line
-        else
-          break
-        end
+				if (Date.today - date).floor < 15
+					puts line
+				else
+					break
+				end
 			end
 		end
 		
