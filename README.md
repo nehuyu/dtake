@@ -14,7 +14,7 @@ Helps you search and download files easily.
 
 You can get the list of new files at $take.
 
-	  $ dtake ls
+    $ dtake ls
 
 Or you can search files by the name.
 
