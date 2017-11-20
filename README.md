@@ -22,7 +22,7 @@ Or you can search files by the name.
 
 If you want something, donwload it.
 
-    $ dtake d [filename]
+    $ dtake [filename]
 
 ## Development
 
