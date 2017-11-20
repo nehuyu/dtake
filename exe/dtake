@@ -5,9 +5,9 @@ require 'open-uri'
 
 require 'dtake'
 
-commands_regexp = /ls|f|find|d/
+commands = ["ls","f","find","d"]
 
-if !ARGV[0] || ARGV[0].match(commands_regexp) #コマンドであればそのままstart
+if !ARGV[0] || commands.include?(ARGV[0]) #コマンドであればそのままstart
 	Dtake::CLI.start
 else
 	Dtake::CLI.new.d(ARGV[0]) #コマンド以外はファイル名、ダウンロード
